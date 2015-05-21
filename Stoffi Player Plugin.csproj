@@ -7,7 +7,7 @@
     <ProjectGuid>{93A30BAD-6826-47A7-AE2A-C6DB85ACCD9E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Stoffi.Plugin</RootNamespace>
+    <RootNamespace>Stoffi.Plugins</RootNamespace>
     <AssemblyName>Stoffi Player Plugin</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
