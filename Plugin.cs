@@ -23,11 +23,11 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
+using Windows.UI;
 
 namespace Stoffi.Plugins
 {
@@ -492,7 +492,7 @@ namespace Stoffi.Plugins
 					try
 					{
 						Color c = (Color)value;
-						return c.IsNamedColor ? c.Name : "#" + c.Name.ToUpper();
+						return c.ToString();
 					}
 					catch
 					{
@@ -509,7 +509,11 @@ namespace Stoffi.Plugins
 				{
 					try
 					{
-						this.value = ColorTranslator.FromHtml(value);
+						var a = Convert.ToByte(value.Substring(0, 2), 16);
+						var r = Convert.ToByte(value.Substring(2, 2), 16);
+						var g = Convert.ToByte(value.Substring(4, 2), 16);
+						var b = Convert.ToByte(value.Substring(6, 2), 16);
+						this.value = Color.FromArgb(a, r, g, b);
 					}
 					catch
 					{
